@@ -5,7 +5,7 @@ public final class MatrixOperations { //класс для операций на�
     private MatrixOperations() {}
 
     /**сложение двух матриц*/
-    public static Matrix add(Matrix a, Matrix b) { // static — вызывается как MatrixOperations.add(...)
+    public static Matrix add(Matrix a, Matrix b) {
         return a.add(b); 
     }
 
@@ -16,7 +16,7 @@ public final class MatrixOperations { //класс для операций на�
 
     /**деление матриц: A / B = A * B^(-1)*/
     public static Matrix divide(Matrix a, Matrix b) { // a — делимое, b — делитель
-        return a.divide(b); // Matrix проверяет размеры и обратимость
+        return a.divide(b); // проверяем размеры и обратимость
     }
 
     /**транспонирование матрицы.*/
