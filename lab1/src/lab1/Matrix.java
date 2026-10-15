@@ -52,7 +52,7 @@ public class Matrix { // класс для выполнения матричны
 
     /**сложение матриц: C[i][j] = A[i][j] + B[i][j]*/
     public Matrix add(Matrix other) { // other — второе слагаемое
-        checkSameSize(other); // Проверяем, что размеры совпадают
+        checkSameSize(other); // проверяем, что размеры совпадают
         Matrix result = new Matrix(rows, cols); 
         for (int i = 0; i < rows; i++) { 
             for (int j = 0; j < cols; j++) { 
@@ -64,13 +64,13 @@ public class Matrix { // класс для выполнения матричны
 
     /**умножение матриц: C[i][j] = сумма по k от A[i][k] * B[k][j]*/
     public Matrix multiply(Matrix other) { // other — второй множитель
-        if (this.cols != other.rows) { // Проверяем совместимость размеров
+        if (this.cols != other.rows) { // проверяем совместимость размеров
             throw new IllegalArgumentException(
                 "Несовместимые размеры для умножения: " +
                 this.rows + "x" + this.cols + " и " +
-                other.rows + "x" + other.cols); // Сообщение с размерами обеих матриц
+                other.rows + "x" + other.cols); //сообщение с размерами обеих матриц
         }
-        Matrix result = new Matrix(this.rows, other.cols); // Результат: rows(A) × cols(B)
+        Matrix result = new Matrix(this.rows, other.cols); // результат: rows(A) × cols(B)
         for (int i = 0; i < this.rows; i++) { 
             for (int j = 0; j < other.cols; j++) { 
                 Complex sum = new Complex(0, 0);
@@ -113,9 +113,9 @@ public class Matrix { // класс для выполнения матричны
 
             if (pivot != i) { // если ведущий элемент не на диагонали
                 Complex[] tmp = a[i]; a[i] = a[pivot]; a[pivot] = tmp; // меняем строки местами
-                det = det.multiply(new Complex(-1, 0)); // каждая перестановка меняет знак det
+                det = det.multiply(new Complex(-1, 0)); 
             }
-            det = det.multiply(a[i][i]); // умножаем det на диагональный элемент
+            det = det.multiply(a[i][i]); 
             for (int j = i + 1; j < n; j++) { 
                 Complex factor = a[j][i].divide(a[i][i]);
                 for (int k = i; k < n; k++) { 
@@ -183,7 +183,7 @@ public class Matrix { // класс для выполнения матричны
         return result; 
     }
 
-    /**пПроверка: одинаковые ли размеры у двух матриц */
+    /**проверка: одинаковые ли размеры у двух матриц */
     private void checkSameSize(Matrix other) { 
         if (this.rows != other.rows || this.cols != other.cols) { // сравниваем размеры
             throw new IllegalArgumentException("Размеры матриц должны совпадать"); 
@@ -191,7 +191,7 @@ public class Matrix { // класс для выполнения матричны
     }
 
     /**вывод матрицы в консоль.*/
-    @Override // Переопределяем toString из Object
+    @Override // переопределяем toString из Object
     public String toString() { 
         StringBuilder sb = new StringBuilder(); 
         for (int i = 0; i < rows; i++) {
