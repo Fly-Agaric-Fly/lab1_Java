@@ -15,7 +15,7 @@ public class Complex {        //данный классс представляе
     }
 
     public double getRe() { return re; } //ивлекаем значение для действительной 
-    public double getIm() { return im; } //и мнимой частей(приватное поле, ивзлекаем извне класса)
+    public double getIm() { return im; } //и мнимой частей
 
     /**реализуем сложение (a+bi) + (c+di) = (a+c) + (b+d)i*/
     public Complex add(Complex other) {   //other - второе слагаемое
@@ -40,7 +40,7 @@ public class Complex {        //данный классс представляе
     public Complex divide(Complex other) {  // other — делитель
         double denominator = other.re * other.re + other.im * other.im;  // c^2 + d^2 (квадрат модуля делителя)
         if (denominator == 0) {  // если делитель — комплексный ноль (0 + 0i)
-            throw new ArithmeticException("Деление на ноль (комплексный ноль)");     // прерываем выполнение 
+            throw new ArithmeticException("Деление на ноль (комплексный ноль).");     // прерываем выполнение 
         }
         double newRe = (this.re * other.re + this.im * other.im) / denominator;  // действительная часть результата
         double newIm = (this.im * other.re - this.re * other.im) / denominator;  // мнимая часть
