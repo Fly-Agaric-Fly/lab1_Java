@@ -32,7 +32,7 @@ public class ConsoleInterface { //класс, в котором прописан
     }
 
     private void printMainMenu() { 
-        System.out.println("\n--- Главное меню ---"); 
+        System.out.println("\nГЛАВНОЕ МЕНЮ"); 
         System.out.println("1. Создать новую матрицу"); 
         System.out.println("2. Выполнить операцию");    
         System.out.println("3. Показать последний результат"); 
@@ -41,7 +41,7 @@ public class ConsoleInterface { //класс, в котором прописан
 
     /**создаёт новую матрицу: спрашивает размеры и каждый элемент*/
     private void createNewMatrix() { 
-        System.out.println("\n--- Создание матрицы ---"); 
+        System.out.println("\nСОЗДАНИЕ МАТРИЦЫ"); 
         int r = readInt("Введите число строк: ");   
         int c = readInt("Введите число столбцов: "); 
 
@@ -76,7 +76,7 @@ public class ConsoleInterface { //класс, в котором прописан
             return; 
         }
 
-        System.out.println("\n--- Выбор операции ---"); 
+        System.out.println("\nВЫБОР ОПЕРАЦИИ"); 
         System.out.println("Текущий последний результат:"); 
         System.out.println(lastResult); // Показываем текущее состояние
 
